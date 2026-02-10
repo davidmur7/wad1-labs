@@ -1,12 +1,21 @@
 'use strict';
 import logger from "../utils/logger.js";
+import employeeInfo from "../models/employee.js";
+
 
 const about = {
   createView(request, response) {
     logger.info("About page loading!");
-    response.send('About the Playlist app');   
+      const viewData = {
+      title: "Welcome to the Playlist app!",
+      info: employeeInfo.getAppInfo()
+    };
+ logger.info(viewData.info)
+response.render('about', viewData);
+
   },
 };
+
 
 
 export default about;
