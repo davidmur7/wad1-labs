@@ -8,7 +8,7 @@ const about = {
     logger.info("About page loading!");
       const viewData = {
       title: "Welcome to the Playlist app!",
-      info: employeeInfo.getAppInfo()
+      employees: employeeInfo.getAppInfo()
     };
  logger.info(viewData.info)
 response.render('about', viewData);

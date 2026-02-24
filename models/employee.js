@@ -5,16 +5,13 @@ import JsonStore from './json-store.js';
 
 const employeeInfo = {
 
-    store: new JsonStore('./models/employee.json', { employee: {} }),
-    collection: 'employee',
+  store: new JsonStore('./models/employee.json', { employees: [] }),
+  collection: 'employees',
 
-    getAppInfo() {
-      return this.store.findAll(this.collection);
+  getAppInfo() {
+    return this.store.findAll(this.collection);
   },
 
 }
 
 export default employeeInfo;
-
-
-
