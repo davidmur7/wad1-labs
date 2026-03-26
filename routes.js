@@ -1,5 +1,6 @@
 'use strict';
 
+import stats from './controllers/stats.js';
 import express from 'express';
 const router = express.Router();
 import logger from "./utils/logger.js";
@@ -16,8 +17,11 @@ router.get('/playlist/:id', playlist.createView);
 router.get('/playlist/:id/deletesong/:songid', playlist.deleteSong);
 router.get('/error', (request, response) => response.status(404).end('Page not found.'));
 router.get('/dashboard/deleteplaylist/:id', dashboard.deletePlaylist);
+router.get('/stats', stats.createView);
 
 
+
+router.post('/playlist/:id/updatesong/:songid', playlist.updateSong);
 router.post('/playlist/:id/addsong', playlist.addSong);
 router.post('/dashboard/addplaylist', dashboard.addPlaylist);
 

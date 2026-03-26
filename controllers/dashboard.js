@@ -19,15 +19,21 @@ const dashboard = {
     response.render('dashboard', viewData);
   },
 
-  addPlaylist(request, response) {
-    const newPlayList = {
-      id: uuidv4(),
-      title: request.body.title,
-      songs: [],
-    };
-    playlistStore.addPlaylist(newPlayList);
-    response.redirect('/dashboard');
+addPlaylist(request, response) {
+  const timestamp = new Date();
+
+  const newPlaylist = {
+    id: uuidv4(),
+    title: request.body.title,
+    date: timestamp,
+    rating: parseInt(request.body.rating), 
+    songs: []
+  };
+
+  playlistStore.addPlaylist(newPlaylist);
+  response.redirect('/dashboard');
 },
+
 
 deletePlaylist(request, response) {
     const playlistId = request.params.id;
