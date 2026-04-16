@@ -49,6 +49,12 @@ searchUserPlaylists(search, userid) {
     (playlist => playlist.userid === userid && playlist.title.toLowerCase().includes(search.toLowerCase())))
 }, 
 
+searchPlaylist(search) {
+    return this.store.findBy(
+      this.collection,
+      (playlist => playlist.title.toLowerCase().includes(search.toLowerCase())))
+}
+
 
 
 
