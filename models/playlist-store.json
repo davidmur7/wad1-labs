@@ -22,6 +22,18 @@
       "rating": 4,
       "songs": [],
       "date": "2026-04-16T13:09:52.215Z"
+    },
+    {
+      "id": "02c4771f-9458-442b-a908-96725ffeaff6",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "rating": 5,
+      "title": "testr",
+      "songs": [],
+      "date": "2026-04-21T11:43:38.124Z",
+      "picture": {
+        "url": "http://res.cloudinary.com/dapgywgif/image/upload/v1776771819/qznkcnskewm9jdcru0wf.png",
+        "public_id": "qznkcnskewm9jdcru0wf"
+      }
     }
   ]
 }
