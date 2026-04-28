@@ -7,6 +7,7 @@ import userStore from "../models/user-store.js";
 const stats = {
     createView(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
+    console.log("USER:", loggedInUser);
 
     if (loggedInUser) {
       logger.info("Stats page loading!");
@@ -22,7 +23,7 @@ const stats = {
 
       let totalRating = playlists.reduce((total, playlist) => total + parseInt(playlist.rating), 0);
 
-      let avgRating = numPlaylists > 0 ? totalRating / numPlaylists : 0;
+      let avgRating = numPlaylists > 0 ? (totalRating / numPlaylists).toFixed(2) : 0;
 
       let maxRating = playlists.length > 0 ? Math.max(...playlists.map(playlist => playlist.rating)) : 0;
       let maxRated = playlists.filter(playlist => playlist.rating === maxRating);
@@ -48,7 +49,8 @@ const stats = {
       const viewData = {
         title: "Playlist App Statistics",
         stats: statistics,
-        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName
+        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+        picture: loggedInUser.picture
       };
 
       response.render("stats", viewData);

@@ -40,3 +40,10 @@ table {
   align-items: center;
   margin-bottom: 1.5em;
 }
+
+.profilepic {
+  padding-top: 15px;
+  padding-right: 5px;
+  line-height: 20px;
+  font-weight: bold;
+}

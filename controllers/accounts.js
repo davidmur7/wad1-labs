@@ -3,6 +3,7 @@
 import logger from '../utils/logger.js';
 import userStore from '../models/user-store.js';
 import { v4 as uuidv4 } from 'uuid';
+import playlistStore from "../models/playlist-store.js";
 
 //create an accounts object
 const accounts = {
@@ -11,6 +12,7 @@ const accounts = {
   index(request, response) {
     const viewData = {
       title: 'Login or Signup',
+
     };
     response.render('index', viewData);
   },
@@ -38,14 +40,18 @@ const accounts = {
   },
   
  //register function to render the registration page for adding a new user
-  register(request, response) {
-    const user = request.body;
-    user.id = uuidv4();
-    userStore.addUser(user);
-    logger.info('registering' + user.email);
+register(request, response) {
+  const user = request.body;
+  user.id = uuidv4();
+
+  const picture = request.files.picture; 
+
+  userStore.addUser(user, picture, () => {
+    logger.info('registering ' + user.email);
     response.cookie('playlist', user.email);
     response.redirect('start');
-  },
+  });
+},
   
   //authenticate function to check user credentials and either render the login page again or the start page.
   authenticate(request, response) {

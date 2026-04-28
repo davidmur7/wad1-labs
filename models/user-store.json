@@ -48,6 +48,41 @@
       "email": "mary.lyng@setu.ie",
       "password": "Trustno1",
       "id": "235ff107-3861-4616-9241-67f3d5cfd4c1"
+    },
+    {
+      "firstName": "Peter",
+      "lastName": "Griffin",
+      "email": "peter@griffin.com",
+      "password": "stewie74",
+      "picture": "recognie.png",
+      "id": "2d7fb70f-0e4a-46f1-a8cd-b5abb876dd6b"
+    },
+    {
+      "firstName": "Stewie",
+      "lastName": "Griffin",
+      "email": "stewie@griffin.com",
+      "password": "stewie74",
+      "picture": "cuma.png",
+      "id": "212d5b0a-2670-4840-b828-d3c8554230b7"
+    },
+    {
+      "firstName": "Lois",
+      "lastName": "Griffin",
+      "email": "lois@griffin.com",
+      "password": "stewie74",
+      "picture": "main-sample_y1aed2.png",
+      "id": "530e70e1-626d-4e8d-a32f-3f62bd8e7cbf"
+    },
+    {
+      "firstName": "Joe",
+      "lastName": "Bloggs",
+      "email": "joe.bloggs@setu.ie",
+      "password": "Treustno1",
+      "id": "03b09e39-7137-442c-8a22-5a48708a8547",
+      "picture": {
+        "url": "http://res.cloudinary.com/dapgywgif/image/upload/v1777372704/w4fyy5azo2yrfrfngmrp.png",
+        "public_id": "w4fyy5azo2yrfrfngmrp"
+      }
     }
   ]
 }
